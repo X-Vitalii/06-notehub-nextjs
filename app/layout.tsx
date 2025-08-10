@@ -35,6 +35,7 @@ export default function RootLayout({
 
           <Footer />
         </TanStackProvider>
+        <div id="modal-root" />
       </body>
     </html>
   );

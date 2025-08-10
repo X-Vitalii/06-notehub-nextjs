@@ -1,3 +1,5 @@
+'use client';
+
 import { createPortal } from 'react-dom';
 import { useEffect } from 'react';
 import css from './Modal.module.css';
@@ -7,9 +9,10 @@ interface ModalProps {
   children: React.ReactNode;
 }
 
-const modalRoot = document.getElementById('modal-root')!;
+// const modalRoot = document.getElementById('modal-root')!;
 
 export default function Modal({ onClose, children }: ModalProps) {
+  const modalRoot = document.getElementById('modal-root')!;
   useEffect(() => {
     document.body.style.overflow = 'hidden';
 

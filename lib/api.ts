@@ -1,22 +1,7 @@
 import axios from 'axios';
-// import type { Note, AddNote } from '../types/note';
+import type { Note, AddNote } from '../types/note';
 
 export type Tag = 'Work' | 'Personal' | 'Meeting' | 'Shopping' | 'Todo';
-
-export interface Note {
-  id: string;
-  title: string;
-  content: string;
-  createdAt: string;
-  updatedAt: string;
-  tag: Tag;
-}
-
-export interface AddNote {
-  title: string;
-  content: string;
-  tag: Tag;
-}
 
 axios.defaults.baseURL = 'https://notehub-public.goit.study/api';
 axios.defaults.headers.common.Authorization = `Bearer ${

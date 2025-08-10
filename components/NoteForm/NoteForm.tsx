@@ -3,7 +3,7 @@ import { useId } from 'react';
 import { Formik, Form, Field, type FormikHelpers, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import css from './NoteForm.module.css';
-import type { AddNote } from '../../lib/api';
+import type { AddNote } from '../../types/note';
 import { createNote } from '../../lib/api';
 
 interface NoteFormProps {

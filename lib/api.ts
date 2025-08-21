@@ -16,10 +16,9 @@ interface NotesResponse {
 export async function fetchNotes(
   query: string,
   page: number,
-  perPage = 12,
 ): Promise<NotesResponse> {
   const { data } = await axios.get<NotesResponse>('/notes', {
-    params: { page, perPage, search: query },
+    params: { page, perPage: 12, search: query },
   });
   return data;
 }

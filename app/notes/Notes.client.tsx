@@ -15,11 +15,7 @@ import NoteForm from '../../components/NoteForm/NoteForm';
 
 import css from './NotesPage.module.css';
 
-type NotesClientProps = {
-  perPage: number;
-};
-
-export default function NoteClient({ perPage }: NotesClientProps) {
+export default function NoteClient() {
   const [page, setPage] = useState(1);
   const [query, setQuery] = useState('');
   const [debouncedValue] = useDebounce(query, 3000);
@@ -27,7 +23,7 @@ export default function NoteClient({ perPage }: NotesClientProps) {
 
   const { data, isSuccess, isLoading, isError } = useQuery({
     queryKey: ['notes', debouncedValue, page],
-    queryFn: () => fetchNotes(debouncedValue, page, perPage),
+    queryFn: () => fetchNotes(debouncedValue, page),
     placeholderData: keepPreviousData,
   });
 
